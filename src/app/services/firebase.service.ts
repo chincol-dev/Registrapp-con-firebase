@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore'; // Firestore 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { User } from '../models/user.model';
 import {updateProfile} from "@angular/fire/auth"; // Importa tu modelo de usuario
+import {getFirestore, setDoc, doc, getDoc} from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,14 @@ export class FirebaseService {
   }
 
 
+  //Base de datos
 
+setDocument(path:string,data:any){
+  return setDoc(doc(getFirestore(),path),data);
+
+}
+
+async getDocument(path:string){
+  return (await getDoc(doc(getFirestore(),path))).data();
+}
 }
