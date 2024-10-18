@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TestsComponent} from "./tests/tests.component";
+import {QrCodeComponent} from "../qr-code/qr-code.component";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {TestsComponent} from "./tests/tests.component";
     SharedModule,
     IonicModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QrCodeComponent
   ]
 })
 export class PagesModule { }
