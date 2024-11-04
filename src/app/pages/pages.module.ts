@@ -1,15 +1,15 @@
-import { SingInComponent } from './auth/sing-in/sing-in.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {SingInComponent} from './auth/sing-in/sing-in.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { PagesRoutingModule } from './pages-routing.module';
-import { SingUpComponent } from './auth/sing-up/sing-up.component';
-import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
-import { StudentComponent } from './student/student.component';
-import { TeacherComponent } from './teacher/teacher.component';
-import { SharedModule } from '../shared/shared.module';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {PagesRoutingModule} from './pages-routing.module';
+import {SingUpComponent} from './auth/sing-up/sing-up.component';
+import {ForgotPasswordComponent} from './auth/forgot-password/forgot-password.component';
+import {StudentComponent} from './student/student.component';
+import {TeacherComponent} from './teacher/teacher.component';
+import {SharedModule} from '../shared/shared.module';
+import {IonicModule} from '@ionic/angular';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TestsComponent} from "./tests/tests.component";
 import {QrCodeComponent} from "../qr-code/qr-code.component";
 
@@ -23,7 +23,7 @@ import {QrCodeComponent} from "../qr-code/qr-code.component";
     TeacherComponent,
     TestsComponent
   ]
-    ,
+  ,
   imports: [
     CommonModule,
     PagesRoutingModule,
@@ -34,4 +34,5 @@ import {QrCodeComponent} from "../qr-code/qr-code.component";
     QrCodeComponent
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+}
