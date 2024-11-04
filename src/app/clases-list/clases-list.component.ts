@@ -18,6 +18,10 @@ export class ClasesListComponent implements OnInit {
   ngOnInit(): void {
     // Obtener el usuario autenticado y listar las clases asociadas
     const userCredentials = this.utilsService.getFromLocaleStorage('user');
+    if (!userCredentials) {
+      this.utilsService.routerLink('/');
+    }
+
     if (userCredentials && userCredentials.uid && userCredentials.uid) {
       this.firebaseService.getClasesByProfesor(userCredentials.uid).subscribe(clases => {
         this.clases = clases;

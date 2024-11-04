@@ -31,4 +31,8 @@ export class UtilsService {
   getFromLocaleStorage(key: string) {
     return JSON.parse(localStorage.getItem(key));
   }
+
+  deleteLocaleStorage(key: string) {
+    return localStorage.removeItem(key);
+  }
 }
