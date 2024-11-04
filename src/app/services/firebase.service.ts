@@ -58,6 +58,11 @@ export class FirebaseService {
     ).valueChanges({ idField: 'id' });
   }
 
+  // Método para obtener clases basadas en el ID del profesor
+  getClasesById(classId: string) {
+    return this.getDocument('Clases/' + classId);
+  }
+
   // Método para obtener clases basadas en el ID del alumno
   getClasesByAlumno(alumnoId: string): Observable<any[]> {
     return this.firestore.collection('Clases', ref =>
