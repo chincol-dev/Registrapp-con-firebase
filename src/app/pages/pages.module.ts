@@ -12,6 +12,7 @@ import {IonicModule} from '@ionic/angular';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TestsComponent} from "./tests/tests.component";
 import {QrCodeComponent} from "../qr-code/qr-code.component";
+import {ClasesListComponent} from "../clases-list/clases-list.component";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {QrCodeComponent} from "../qr-code/qr-code.component";
     ForgotPasswordComponent,
     StudentComponent,
     TeacherComponent,
-    TestsComponent
+    TestsComponent,
+    ClasesListComponent
   ]
   ,
   imports: [

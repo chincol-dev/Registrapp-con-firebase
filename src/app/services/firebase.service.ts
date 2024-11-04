@@ -17,9 +17,7 @@ export class FirebaseService {
 
   //Iniciar sesión
   signIn(user: User) {
-    const credentials = signInWithEmailAndPassword(getAuth(), user.email, user.password);
-    console.log(this.getCurrentUser());
-    return credentials;
+    return  signInWithEmailAndPassword(getAuth(), user.email, user.password);
   }
 
   //Registrar usuario
