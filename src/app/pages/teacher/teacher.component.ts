@@ -8,8 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class TeacherComponent implements OnInit {
   constructor() { }
 
-  ngOnInit(): void {
-    // Aquí puedes agregar lógica adicional si es necesario
-    console.log('TeacherComponent inicializado, listo para mostrar la lista de clases.');
-  }
+  ngOnInit(): void {}
 }
