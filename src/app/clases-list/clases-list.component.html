@@ -1,3 +1,26 @@
-<p>
-  clases-list works!
-</p>
+<div *ngIf="isLoading" class="loading">
+  Cargando clases...
+</div>
+
+<table *ngIf="!isLoading && clases.length > 0" class="clases-table">
+  <thead>
+  <tr>
+    <th>Nombre de la Clase</th>
+    <th>Código</th>
+    <th>Horario</th>
+    <th>Profesor</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let clase of clases">
+    <td>{{ clase.nombre }}</td>
+    <td>{{ clase.codigo }}</td>
+    <td>{{ clase.horario.join(', ') }}</td>
+    <td>{{ clase.profesorNombre }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!isLoading && clases.length === 0" class="no-data">
+  No se encontraron clases.
+</div>
