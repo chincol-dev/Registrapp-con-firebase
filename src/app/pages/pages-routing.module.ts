@@ -6,6 +6,7 @@ import {ForgotPasswordComponent} from './auth/forgot-password/forgot-password.co
 import {StudentComponent} from './student/student.component';
 import {TeacherComponent} from './teacher/teacher.component';
 import {TestsComponent} from "./tests/tests.component";
+import {ClassComponent} from "./class/class.component";
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'student', component: StudentComponent},
   {path: 'teacher', component: TeacherComponent},
-  {path: 'test', component: TestsComponent}
+  {path: 'test', component: TestsComponent},
+  {path: 'class/:id', component: ClassComponent}
 ];
 
 @NgModule({
