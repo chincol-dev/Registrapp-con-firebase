@@ -17,7 +17,9 @@ export class FirebaseService {
 
   //Iniciar sesión
   signIn(user: User) {
-    return signInWithEmailAndPassword(getAuth(), user.email, user.password);
+    const credentials = signInWithEmailAndPassword(getAuth(), user.email, user.password);
+    console.log(this.getCurrentUser());
+    return credentials;
   }
 
   //Registrar usuario
@@ -42,7 +44,7 @@ export class FirebaseService {
 
   // Método para obtener el usuario autenticado
   getCurrentUser() {
-    return getAuth(); // Retorna un observable con el estado de autenticación
+    return getAuth().currentUser; // Retorna un observable con el estado de autenticación
   }
 
   // Método para obtener clases basadas en el ID del profesor
