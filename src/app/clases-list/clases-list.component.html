@@ -1,26 +1,24 @@
-<div *ngIf="isLoading" class="loading">
-  Cargando clases...
-</div>
+<ion-content>
+  <ion-grid *ngIf="!isLoading && clases.length > 0">
+    <ion-row>
+      <ion-col size="12">
+        <ion-card *ngFor="let clase of clases">
+          <ion-card-header>
+            <ion-card-title>{{ clase.nombre }}</ion-card-title>
+            <ion-card-subtitle>Código: {{ clase.codigo }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Horario:</strong> {{ clase.horario.join(', ') }}</p>
+            <p><strong>Profesor:</strong> {{ clase.profesorNombre }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<table *ngIf="!isLoading && clases.length > 0" class="clases-table">
-  <thead>
-  <tr>
-    <th>Nombre de la Clase</th>
-    <th>Código</th>
-    <th>Horario</th>
-    <th>Profesor</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let clase of clases">
-    <td>{{ clase.nombre }}</td>
-    <td>{{ clase.codigo }}</td>
-    <td>{{ clase.horario.join(', ') }}</td>
-    <td>{{ clase.profesorNombre }}</td>
-  </tr>
-  </tbody>
-</table>
+  <div *ngIf="!isLoading && clases.length === 0" class="ion-text-center">
+    <ion-text color="medium">No se encontraron clases.</ion-text>
+  </div>
 
-<div *ngIf="!isLoading && clases.length === 0" class="no-data">
-  No se encontraron clases.
-</div>
+  <ion-spinner *ngIf="isLoading" class="ion-margin"></ion-spinner>
+</ion-content>
