@@ -18,6 +18,7 @@ export class SingInComponent implements OnInit {
 
   isLoading: boolean = false;
   errorMessage: string | null = null;
+  userData = null;
 
   constructor(
     private firebaseService: FirebaseService,
@@ -41,14 +42,18 @@ export class SingInComponent implements OnInit {
         const user: User = { email, password };
         this.firebaseService.signIn(user)
           .then(credentials => {
-            console.log('Credenciales de inicio de sesión:', credentials);
+            this.firebaseService.getUserData(credentials.user.uid).subscribe(data => {
+              this.userData = data[0];
+              this.utilsService.saveInLocaleStorage('user', this.userData);
+            });
             this.isLoading = false;
             loading.dismiss();
-            this.utilsService.presentToast({
-              message: 'Inicio de sesión exitoso',
-              duration: 2000,
-              color: 'success'
-            });
+
+            if (this.userData.userType === 'student') {
+              this.utilsService.routerLink('/student');
+            } else if (this.userData.userType === 'teacher') {
+              this.utilsService.routerLink('/teacher');
+            }
           })
           .catch(error => {
             this.isLoading = false;

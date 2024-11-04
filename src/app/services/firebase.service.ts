@@ -45,6 +45,12 @@ export class FirebaseService {
     return getAuth().currentUser; // Retorna un observable con el estado de autenticación
   }
 
+  getUserData(profesorId: string): Observable<any[]> {
+    return this.firestore.collection('users', ref =>
+      ref.where('uid', '==', profesorId)
+    ).valueChanges({ idField: 'id' });
+  }
+
   // Método para obtener clases basadas en el ID del profesor
   getClasesByProfesor(profesorId: string): Observable<any[]> {
     return this.firestore.collection('Clases', ref =>
