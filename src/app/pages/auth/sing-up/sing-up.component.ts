@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { FirebaseService } from 'src/app/services/firebase.service';
-import { User } from '../../../models/user.model';
-import { UtilsService } from '../../../services/utils.service';
+import {Component, inject, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {FirebaseService} from 'src/app/services/firebase.service';
+import {User} from '../../../models/user.model';
+import {UtilsService} from '../../../services/utils.service';
 
 @Component({
   selector: 'app-sing-up',
@@ -21,7 +21,8 @@ export class SingUpComponent implements OnInit {
   firebaseSvc = inject(FirebaseService);
   utilsSvc = inject(UtilsService);
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   get emailTouched() {
     return this.form.controls.email.touched;

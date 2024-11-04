@@ -1,8 +1,8 @@
 export interface User {
-  uid: string;
+  uid?: string; // Identificador único del usuario, opcional al crear
   email: string;
   password: string;
-  name: string;
-  tipo: string; // "profesor" o "alumno"
-  asignaturas?: string[]; // Inicialmente vacío
+  name?: string;
+  tipo?: 'profesor' | 'alumno'; // Especifica el rol del usuario
+  asignaturas?: string[]; // Lista de IDs de asignaturas asociadas al usuario
 }

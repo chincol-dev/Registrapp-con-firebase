@@ -6,12 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher.component.scss']
 })
 export class TeacherComponent implements OnInit {
-  qrCodeValue: string;
-
   constructor() { }
 
-  ngOnInit(): void {
-    // Asignar el valor del QR directamente
-    this.qrCodeValue = 'https://example.com';
-  }
+  ngOnInit(): void {}
 }
