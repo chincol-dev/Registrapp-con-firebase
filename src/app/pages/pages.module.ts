@@ -13,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TestsComponent} from "./tests/tests.component";
 import {QrCodeComponent} from "../qr-code/qr-code.component";
 import {ClasesListComponent} from "../clases-list/clases-list.component";
+import {ClassComponent} from "./class/class.component";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {ClasesListComponent} from "../clases-list/clases-list.component";
     StudentComponent,
     TeacherComponent,
     TestsComponent,
-    ClasesListComponent
+    ClasesListComponent,
+    ClassComponent
   ]
   ,
   imports: [
